@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0a0a0f 0%, #0d1b2a 100%);
+  overflow: hidden;
+}
+
+/* Fond animé luxueux */
+.gradient-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 30%, rgba(0, 191, 255, 0.3), transparent 50%),
+              radial-gradient(circle at 70% 70%, rgba(255, 215, 0, 0.2), transparent 50%);
+  filter: blur(120px);
+  z-index: 0;
+  animation: move-bg 10s ease-in-out infinite alternate;
+}
+
+@keyframes move-bg {
+  from { transform: scale(1) translate(0, 0); }
+  to { transform: scale(1.1) translate(20px, -20px); }
+}
+
+/* Carte en verre */
+.glass-card {
+  position: relative;
+  z-index: 1;
+  width: 420px;
+  padding: 40px 35px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 30px;
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+  color: white;
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  font-size: 2.3em;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ffd700, #00bfff);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 0.95em;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 30px;
+}
+
+/* Formulaire */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+input {
+  width: 100%;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1em;
+  outline: none;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+input:focus {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 10px #00bfff55, inset 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+/* Sélecteur de format */
+.format-select {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.format-select label {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  font-size: 0.9em;
+}
+
+.format-select input {
+  display: none;
+}
+
+.format-select input:checked + span {
+  color: black;
+  background: linear-gradient(90deg, #00bfff, #ffd700);
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-weight: 600;
+}
+
+/* Bouton */
+button {
+  width: 100%;
+  padding: 14px 0;
+  border: none;
+  border-radius: 18px;
+  background: linear-gradient(90deg, #00bfff, #ffd700);
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1.05em;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 191, 255, 0.2);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 191, 255, 0.35), 0 0 15px rgba(255, 215, 0, 0.4);
+}
+
+.progress {
+  margin-top: 25px;
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#progressBar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #ffd700, #00bfff);
+  transition: width 0.3s ease;
+}
+
+#status {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
